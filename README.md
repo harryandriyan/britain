@@ -1,8 +1,5 @@
-# Next.js redux starter
-An opinionated Next.js starter kit with Express, Redux, SASS, and Jest.
-
-## About
-Next.js is an awesome and minimalistic framework to make a modern universal react app. However, there're times that we need a bit more features to build a complex SPA. That's why this project is born.
+# Britain
+Tempat baca Berita ringkas, lengkap, Internasional
 
 ## Features
 - Dynamic routing with [express](https://github.com/expressjs/express) and [next-routes](https://github.com/fridays/next-routes).
@@ -15,49 +12,10 @@ Next.js is an awesome and minimalistic framework to make a modern universal reac
 
 ## Getting started
 ```
-git clone https://github.com/CodementorIO/nextjs-redux-starter my-project
+git clone https://github.com/harryandriyan/britain my-project
 cd my-project
 yarn install
 yarn start
 ```
 
 Then open `http://localhost:3100/` to see your app.
-
-## Structure overview
-```
-├── README.md
-├── next.config.js
-├── package.json
-├── pages
-│   ├── _document.js
-│   ├── about.js
-│   └── index.js
-├── routes.js
-├── server
-│   └── index.js
-├── src
-│   ├── actions
-│   │   └── repos.js
-│   ├── components
-│   │   └── SearchResults.js
-│   ├── config.js
-│   ├── containers
-│   │   └── SearchRepoContainer.js
-│   ├── libs
-│   │   └── github.js
-│   ├── reducers
-│   │   ├── index.js
-│   │   └── repos.js
-│   ├── store
-│   │   └── createStore.js
-│   ├── styles
-│   │   ├── SearchResults.scss
-│   │   └── base.scss
-│   └── test
-│       ├── __mocks__
-│       │   └── styleMock.js
-│       ├── components
-│       │   └── SearchResults.test.js
-│       └── jest.setup.js
-└── yarn.lock
-```
