@@ -4,7 +4,7 @@ import { Map } from 'immutable'
 import { connect } from 'react-redux'
 
 import { getSources } from 'actions/sources'
-
+import Link from 'next/link'
 class LeftSidebar extends Component {
   static async getInitialProps ({ store, query }) {
     let country = query.country || 'id'
@@ -24,9 +24,11 @@ class LeftSidebar extends Component {
           <h4>News Source</h4>
           {
             sources.has('sources') ? sources.get('sources').take(20).map(item => (
-              <a href={`/explore/${item.get('id')}`} key={item.get('id')} className='list-group-item list-group-item-action'>
-                { item.get('name') }
-              </a>
+              <Link href={`/bysource?source=${item.get('id')}`} key={item.get('id')}>
+                <a className='list-group-item list-group-item-action'>
+                  { item.get('name') }
+                </a>
+              </Link>
             )) : 'Loading'
           }
         </div>
