@@ -3,7 +3,6 @@ import LeftSidebar from '../components/LeftSidebar'
 import PropTypes from 'prop-types'
 import { Map } from 'immutable'
 import { connect } from 'react-redux'
-
 import { getBySource } from 'actions/bySource'
 
 class BysourceContainer extends Component {
@@ -11,10 +10,9 @@ class BysourceContainer extends Component {
     let source = query.source || 'cnn'
     await store.dispatch(getBySource({ source }))
   }
-
   componentDidMount () {
-    let { getBySource } = this.props
-    getBySource({ source: 'cnn' })
+    let source = this.props.router.query.source || 'cnn'
+    getBySource({ source })
   }
 
   render () {
@@ -33,6 +31,8 @@ class BysourceContainer extends Component {
                       <a href={item.get('url')} target='_blank' className='list-group-item list-group-item-action'>
                         { item.get('title') }
                       </a>
+                      <small>Source : { item.get('source').get('name') }</small>{' |'}
+                      <small>Date : { item.get('publishedAt') }</small>
                     </h5>
                     { item.get('description') }
                   </div>

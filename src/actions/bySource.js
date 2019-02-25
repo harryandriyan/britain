@@ -4,22 +4,22 @@ import bySource from 'libs/bySource'
 export const GET_BY_SOURCE = Symbol('GET_BY_SOURCE')
 export const GET_BY_SOURCE_SUCCESS = Symbol('GET_BY_SOURCE_SUCCESS')
 
-export function getBySource ({ country }) {
+export function getBySource ({ source }) {
   return dispatch => {
     dispatch({
       type: GET_BY_SOURCE
     })
 
-    return bySource.getBySource({ country }).then(res => {
-      dispatch(onGetBySource(country, res))
+    return bySource.getBySource({ source }).then(res => {
+      dispatch(onGetBySource(source, res))
     })
   }
 }
 
-function onGetBySource (country, payload) {
+function onGetBySource (source, payload) {
   return {
     type: GET_BY_SOURCE_SUCCESS,
-    country,
+    source,
     payload
   }
 }

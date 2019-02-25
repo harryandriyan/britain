@@ -33,6 +33,8 @@ class HomeContainer extends Component {
                       <a href={item.get('url')} target='_blank' className='list-group-item list-group-item-action'>
                         { item.get('title') }
                       </a>
+                      <small>Source : { item.get('source').get('name') }</small>{' |'}
+                      <small>Date : { item.get('publishedAt') }</small>
                     </h5>
                     { item.get('description') }
                   </div>

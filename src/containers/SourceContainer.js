@@ -3,6 +3,7 @@ import LeftSidebar from '../components/LeftSidebar'
 import PropTypes from 'prop-types'
 import { Map } from 'immutable'
 import { connect } from 'react-redux'
+import Link from 'next/link'
 
 class SourceContainer extends Component {
   render () {
@@ -20,6 +21,11 @@ class SourceContainer extends Component {
                     <p className='card-text'>
                       { item.get('description') }
                     </p>
+                    <Link href={`/bysource?source=${item.get('id')}`} key={item.get('id')}>
+                      <a className='card-link'>
+                        View News
+                      </a>
+                    </Link>
                     <a href={item.get('url')} target='_blank' className='card-link'>Visit</a>
                   </div>
                 </div>
