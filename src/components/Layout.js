@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default class Layout extends PureComponent {
   goToHome = () => {
-    //return home
+    // return home
   }
   render () {
     return (
@@ -14,7 +14,7 @@ export default class Layout extends PureComponent {
               <img src='/static/next-logo.png' /><h3>Britain</h3>
             </a>
           </Link>
-          
+
           <menu>
             <Link href='/explore'>
               <a>Explore</a>
@@ -41,6 +41,9 @@ export default class Layout extends PureComponent {
             }
             menu > a {
               margin-right: 16px;
+            }
+            .inner-container {
+              margin-top: 20px
             }
           `}</style>
         </header>

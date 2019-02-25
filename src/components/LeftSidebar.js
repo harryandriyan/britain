@@ -15,21 +15,20 @@ class LeftSidebar extends Component {
     let { getSources } = this.props
     getSources({ country: 'us' })
   }
-  
+
   render () {
     let { sources } = this.props
     return (
-      <div className="col-3">
-        <div className="list-group">
-        <h4>News Source</h4>
-        {
-          sources.has('sources') ? sources.get('sources').take(20).map(item => (
-            <a href={`/explore/${item.get('id')}`} target='_blank' className="list-group-item list-group-item-action">
-              { item.get('name') }
-            </a>
-          )) : "Loading"
-        }
-        More ... 
+      <div className='col-3'>
+        <div className='list-group'>
+          <h4>News Source</h4>
+          {
+            sources.has('sources') ? sources.get('sources').take(20).map(item => (
+              <a href={`/explore/${item.get('id')}`} key={item.get('id')} className='list-group-item list-group-item-action'>
+                { item.get('name') }
+              </a>
+            )) : 'Loading'
+          }
         </div>
       </div>
     )
