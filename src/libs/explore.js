@@ -2,7 +2,7 @@ import axios from 'axios'
 import config from 'config'
 
 const explore = {
-  getHeadlines ({ word = 'pemilu' }) {
+  getExplore ({ word = 'Trade war' }) {
     let path = `${config.newsApiEndpoint}/everything?q=${word}&apiKey=${config.newsApiKey}`
 
     return axios.get(path).then(res => {
